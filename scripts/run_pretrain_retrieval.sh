@@ -193,36 +193,31 @@ for METHOD in $SELECTED_METHODS; do
 
                 if [[ "$ACTUAL_PREFIX" == "order_dyn" ]]; then
                     $IS_SURR && TRAIN_SCRIPT="train_order_dyn_surr.py" || TRAIN_SCRIPT="train_order_dyn.py"
-                    LOGFILE="logs/pretrain/pretrain_${LOG_TAG}_${DATASET}.log"
+
                     if $IS_SURR; then
                         run_job "pretrain $LABEL_BASE" "$ORDER_SCRIPTS" \
                             "$TRAIN_SCRIPT" \
                             --dataset "$DATASET" --mode train --seed "$SEED" \
-                            --device "$DEVICE" "${BACKBONE_ARG[@]}" \
-                            > "$LOGFILE" 2>&1
+                            --device "$DEVICE" "${BACKBONE_ARG[@]}" 
                     else
                         run_job "pretrain $LABEL_BASE" "$ORDER_SCRIPTS" \
                             "$TRAIN_SCRIPT" \
                             --dataset "$DATASET" --mode train --seed "$SEED" \
-                            --split_suffix "$SPLIT_SUFFIX" --device "$DEVICE" "${BACKBONE_ARG[@]}" \
-                            > "$LOGFILE" 2>&1
+                            --split_suffix "$SPLIT_SUFFIX" --device "$DEVICE" "${BACKBONE_ARG[@]}" 
                     fi
 
                 elif [[ "$ACTUAL_PREFIX" == "order_alpha" ]]; then
                     $IS_SURR && TRAIN_SCRIPT="train_order_alpha_surr.py" || TRAIN_SCRIPT="train_order_alpha.py"
-                    LOGFILE="logs/pretrain/pretrain_${LOG_TAG}${ALPHA}_${DATASET}.log"
                     if $IS_SURR; then
                         run_job "pretrain $LABEL_BASE" "$ORDER_SCRIPTS" \
                             "$TRAIN_SCRIPT" \
                             --dataset "$DATASET" --mode train --seed "$SEED" \
-                            --alpha "$ALPHA" --device "$DEVICE" "${BACKBONE_ARG[@]}" \
-                            > "$LOGFILE" 2>&1
+                            --alpha "$ALPHA" --device "$DEVICE" "${BACKBONE_ARG[@]}" 
                     else
                         run_job "pretrain $LABEL_BASE" "$ORDER_SCRIPTS" \
                             "$TRAIN_SCRIPT" \
                             --dataset "$DATASET" --mode train --seed "$SEED" \
-                            --alpha "$ALPHA" --split_suffix "$SPLIT_SUFFIX" --device "$DEVICE" "${BACKBONE_ARG[@]}" \
-                            > "$LOGFILE" 2>&1
+                            --alpha "$ALPHA" --split_suffix "$SPLIT_SUFFIX" --device "$DEVICE" "${BACKBONE_ARG[@]}"
                     fi
                 fi
 
@@ -230,36 +225,30 @@ for METHOD in $SELECTED_METHODS; do
 
                 if [[ "$ACTUAL_PREFIX" == "order_dyn" ]]; then
                     $IS_SURR && TRAIN_SCRIPT="train_order_dyn_surr.py" || TRAIN_SCRIPT="train_order_dyn.py"
-                    LOGFILE="logs/retrieval/retrieval_${LOG_TAG}_${DATASET}.log"
                     if $IS_SURR; then
                         run_job "retrieval $LABEL_BASE" "$ORDER_SCRIPTS" \
                             "$TRAIN_SCRIPT" \
                             --dataset "$DATASET" --mode test --seed "$SEED" \
-                            --device "$DEVICE" "${BACKBONE_ARG[@]}" \
-                            > "$LOGFILE" 2>&1
+                            --device "$DEVICE" "${BACKBONE_ARG[@]}" 
                     else
                         run_job "retrieval $LABEL_BASE" "$ORDER_SCRIPTS" \
                             "$TRAIN_SCRIPT" \
                             --dataset "$DATASET" --mode test --seed "$SEED" \
-                            --split_suffix "$SPLIT_SUFFIX" --device "$DEVICE" "${BACKBONE_ARG[@]}" \
-                            > "$LOGFILE" 2>&1
+                            --split_suffix "$SPLIT_SUFFIX" --device "$DEVICE" "${BACKBONE_ARG[@]}" 
                     fi
 
                 elif [[ "$ACTUAL_PREFIX" == "order_alpha" ]]; then
                     $IS_SURR && TRAIN_SCRIPT="train_order_alpha_surr.py" || TRAIN_SCRIPT="train_order_alpha.py"
-                    LOGFILE="logs/retrieval/retrieval_${LOG_TAG}${ALPHA}_${DATASET}.log"
                     if $IS_SURR; then
                         run_job "retrieval $LABEL_BASE" "$ORDER_SCRIPTS" \
                             "$TRAIN_SCRIPT" \
                             --dataset "$DATASET" --mode test --seed "$SEED" \
-                            --alpha "$ALPHA" --device "$DEVICE" "${BACKBONE_ARG[@]}" \
-                            > "$LOGFILE" 2>&1
+                            --alpha "$ALPHA" --device "$DEVICE" "${BACKBONE_ARG[@]}" 
                     else
                         run_job "retrieval $LABEL_BASE" "$ORDER_SCRIPTS" \
                             "$TRAIN_SCRIPT" \
                             --dataset "$DATASET" --mode test --seed "$SEED" \
-                            --alpha "$ALPHA" --split_suffix "$SPLIT_SUFFIX" --device "$DEVICE" "${BACKBONE_ARG[@]}" \
-                            > "$LOGFILE" 2>&1
+                            --alpha "$ALPHA" --split_suffix "$SPLIT_SUFFIX" --device "$DEVICE" "${BACKBONE_ARG[@]}" 
                     fi
                 fi
 
