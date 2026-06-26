@@ -1,4 +1,4 @@
-# Learning Ordinality-Aware Multimodal Representations for Composite Materials Design
+# Learning Ordinality-Aware Multimodal Representations for Composite Materials Design [![DOI](https://zenodo.org/badge/1281292743.svg)](https://doi.org/10.5281/zenodo.20929222)
 
 PyTorch implementation of **ORDER** — a framework for learning unified representations from material microstructure images and tabular mechanical properties. It supports cross-modal retrieval, property prediction, and conditional microstructure generation.
 
