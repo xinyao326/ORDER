@@ -14,7 +14,7 @@ Key dependencies: PyTorch 2.8.0 (CUDA 11.7), timm, transformers, open-clip-torch
 
 ## Datasets
 
-**Composite** (`datasets_composite/`): ~436 samples. 9 tabular features (NumFibers, MMA, Vf, A11–A13, A22, A23, A33), 2 targets (yield strength, elongation). 
+**Composite** (`datasets_composite/`): ~436 samples. 9 tabular features (NumFibers, MMA, Vf, A11–A13, A22, A23, A33), 2 targets (yield strength, elongation). Unzip `datasets_composite/processed.zip` first.
 
 **Nanofiber** (`datasets_fiber/`): ~200 samples. 7 features including categorical fiber direction, 5 targets (fracture, elongation, elastic modulus, tangent modulus, yield).
 
