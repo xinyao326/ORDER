@@ -17,6 +17,7 @@ from src.utils import *
 from src.model_config import config_dict
 from src.models.order import OrderModel
 from src.utils import set_random_seed
+os.environ["TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD"] = "1"
 
 
 class _SGPTViT(nn.Module):
